@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Boda Hatsumi & Salvador</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Fuentes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rye&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HERO -->
+    <section class="hero">
+      <p class="subtitulo">Dos caminos, un mismo destino 🤎</p>
+      <h1 class="nombres">Hatsumi & Salvador</h1>
+      <p class="fecha">14 de Noviembre 2026</p>
+      <div id="countdown"></div>
+    </section>
+
+    <!-- MÚSICA -->
+    <audio id="musica" loop>
+      <source src="assets/music.mp3" type="audio/mpeg" />
+    </audio>
+    <button class="music-btn" onclick="toggleMusica()">🎵</button>
+
+    <!-- HISTORIA -->
+    <section class="section fade-in">
+      <h2>Nuestra Historia</h2>
+      <p>
+        Entre caminos de tierra y destinos cruzados, encontramos un amor que hoy
+        celebramos 🤎
+      </p>
+    </section>
+
+    <!-- CEREMONIA -->
+    <section class="section fade-in">
+      <h2>🤠 Ceremonia</h2>
+      <p class="lugar">Parroquia del Sr. San José</p>
+      <p>🕒 5:00 PM</p>
+
+      <iframe
+        class="mapa"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5438139673747!2d-102.1801891!3d21.0109159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84295dc20720bc47%3A0xa6727a2056e49e5!2sParroquia%20del%20Sr.%20San%20Jose!5e0!3m2!1ses!2smx!4v1775708792438!5m2!1ses!2smx"
+        loading="lazy"
+      >
+      </iframe>
+
+      <a href="https://maps.app.goo.gl/ThWMdMwbRMK4SwN48" target="_blank">
+        <button>Cómo llegar</button>
+      </a>
+    </section>
+
+    <!-- RECEPCIÓN -->
+    <section class="section fade-in">
+      <h2>🎉 Recepción</h2>
+      <p class="lugar">Salón de eventos</p>
+      <p>🕒 7:00 PM</p>
+
+      <!-- ⚠️ CAMBIA ESTE IFRAME POR EL REAL DEL SALÓN -->
+      <iframe
+        class="mapa"
+        src="https://www.google.com/maps?q=Guadalajara&output=embed"
+        loading="lazy"
+      >
+      </iframe>
+
+      <a href="https://maps.app.goo.gl/7sjQhrhFhwtf3jsz7" target="_blank">
+        <button>Cómo llegar</button>
+      </a>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section fade-in">
+      <h2>Momentos Especiales</h2>
+      <div class="galeria">
+        <img src="assets/img1.jpg" />
+        <img src="assets/img2.jpg" />
+        <img src="assets/img3.jpg" />
+      </div>
+    </section>
+
+    <!-- ALOJAMIENTO -->
+    <section class="section fade-in">
+      <h2>🏨 Alojamiento</h2>
+      <p>Para nuestros invitados que vienen de fuera, recomendamos:</p>
+
+      <div class="alojamiento">
+        <div class="hotel">
+          <h3>Hotel Ejemplo 1</h3>
+          <p>Cerca de la recepción</p>
+          <a href="#" target="_blank">
+            <button>Ver ubicación</button>
+          </a>
+        </div>
+
+        <div class="hotel">
+          <h3>Hotel Ejemplo 2</h3>
+          <p>Opción cómoda y accesible</p>
+          <a href="#" target="_blank">
+            <button>Ver ubicación</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section fade-in">
+      <h2>Dress Code</h2>
+      <p>Estilo Vaquero 🤠</p>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section fade-in">
+      <h2>Confirma tu asistencia</h2>
+      <button onclick="confirmar()">Confirmar</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Con amor, Hatsumi & Salvador 🤎</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
