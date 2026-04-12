@@ -1,33 +1,34 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
 body {
   margin: 0;
-  font-family: "Playfair Display", serif;
-  background-color: #f4e1c1;
-  color: #3b2f2f;
-  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #f5e6cc; /* beige base */
 }
 
-/* HERO */
-
-.fecha {
-  font-size: 18px;
-  letter-spacing: 2px;
-}
-
-.subtitulo {
-  font-style: italic;
-  opacity: 0.9;
-}
+/* =========================
+   HERO (Pantalla completa)
+========================= */
 
 .hero {
-  background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
-    center/cover;
-  color: white;
-  padding: 120px 20px;
   position: relative;
+  height: 100vh;
+  background: url("assets/novios.jpeg") center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+
+  /* 👇 CAMBIO CLAVE */
+  align-items: flex-start;
+
+  text-align: center;
+  color: white;
 }
 
-.hero::before {
-  content: "";
+/* Capa oscura encima de la imagen */
+.overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -36,125 +37,97 @@ body {
   left: 0;
 }
 
-.hero * {
+/* Contenido encima del overlay */
+.contenido {
   position: relative;
+  z-index: 2;
+
+  /* 👇 controla qué tan arriba/abajo está */
+  margin-top: 50px;
+
+  padding: 20px;
 }
+
+/* =========================
+   TEXTOS
+========================= */
+
+/* =========================
+   NOMBRES (alineación perfecta)
+========================= */
 
 .nombres {
-  font-family: "Rye", cursive;
-  font-size: 50px;
+  font-family: "Bodoni Moda", serif;
+  font-size: 42px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 3px;
+
+  gap: 5px; /* espacio entre líneas */
 }
 
-/* SECCIONES */
-.section {
-  padding: 60px 20px;
-  border-bottom: 2px dashed #8b5e3c;
-  max-width: 800px;
-  margin: auto;
+/* Cada nombre */
+.nombre {
+  line-height: 1.2;
 }
 
-.lugar {
-  font-weight: bold;
+/* El & */
+.and {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.8;
 }
 
-/* MAPA */
-.mapa {
-  width: 100%;
-  height: 400px;
-  border: 0;
-  border-radius: 12px;
-  margin: 15px 0;
+/* Fecha */
+.fecha {
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 4px;
+  font-size: 14px;
 }
 
-/* BOTONES */
-button {
-  background-color: #8b5e3c;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  cursor: pointer;
-  border-radius: 5px;
+/* Subtítulo */
+.subtitulo {
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 6px;
+  font-size: 12px;
+  margin-top: 10px;
 }
 
-button:hover {
-  background-color: #5c3b23;
-}
+/* =========================
+   COUNTDOWN
+========================= */
 
-/* GALERÍA */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-}
-
-.galeria img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* ALOJAMIENTO */
-.alojamiento {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+#countdown {
   margin-top: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #f5e6cc; /* beige claro */
 }
 
-.hotel {
-  background: #fff5e6;
-  border: 2px solid #8b5e3c;
-  padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.hotel:hover {
-  transform: translateY(-5px);
-}
-
-.destacado {
-  border: 3px solid #d4af37;
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
-}
-
-.hotel h3 {
-  margin-bottom: 10px;
-}
-
-.hotel p {
+.icono {
   margin-bottom: 15px;
 }
 
-.hotel:hover {
-  transform: translateY(-5px);
+.icono img {
+  width: 200px;
+  height: auto;
+  opacity: 0.9;
 }
 
-/* ANIMACIONES */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s;
-}
+/* =========================
+   RESPONSIVE (pantallas grandes)
+========================= */
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* MÚSICA */
-.music-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #8b5e3c;
-  color: white;
-  border-radius: 50%;
-  padding: 10px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
+@media (min-width: 768px) {
   .nombres {
-    font-size: 32px;
+    font-size: 60px;
+  }
+
+  #countdown {
+    font-size: 26px;
   }
 }

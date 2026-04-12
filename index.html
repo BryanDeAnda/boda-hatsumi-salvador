@@ -2,130 +2,51 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Boda Hatsumi & Salvador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestra Boda</title>
+
+    <!-- Enlace a estilos -->
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Fuentes -->
+    <!-- Fuentes elegantes -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rye&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Josefin+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <!-- HERO -->
+    <!-- =========================
+         HERO (Pantalla completa)
+         ========================= -->
     <section class="hero">
-      <p class="subtitulo">Dos caminos, un mismo destino 🤎</p>
-      <h1 class="nombres">Hatsumi & Salvador</h1>
-      <p class="fecha">14 de Noviembre 2026</p>
-      <div id="countdown"></div>
-    </section>
+      <!-- Capa oscura para mejorar legibilidad -->
+      <div class="overlay"></div>
 
-    <!-- MÚSICA -->
-    <audio id="musica" loop>
-      <source src="assets/music.mp3" type="audio/mpeg" />
-    </audio>
-    <button class="music-btn" onclick="toggleMusica()">🎵</button>
+      <!-- Contenido principal -->
+      <div class="contenido">
+        <div class="icono">
+          <img src="assets/corazon_nombres.svg" alt="decoración" />
+        </div>
+        <!-- Fecha -->
+        <p class="fecha">14 | NOVIEMBRE | 2026</p>
 
-    <!-- HISTORIA -->
-    <section class="section fade-in">
-      <h2>Nuestra Historia</h2>
-      <p>
-        Entre caminos de tierra y destinos cruzados, encontramos un amor que hoy
-        celebramos 🤎
-      </p>
-    </section>
+        <!-- Nombres -->
+        <h1 class="nombres">
+          <span class="nombre">HATSUMI</span>
+          <span class="and">&</span>
+          <span class="nombre">SALVADOR</span>
+        </h1>
 
-    <!-- CEREMONIA -->
-    <section class="section fade-in">
-      <h2>🤠 Ceremonia</h2>
-      <p class="lugar">Parroquia del Sr. San José</p>
-      <p>🕒 5:00 PM</p>
+        <!-- Texto pequeño -->
+        <p class="subtitulo">NUESTRA BODA</p>
 
-      <iframe
-        class="mapa"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5438139673747!2d-102.1801891!3d21.0109159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84295dc20720bc47%3A0xa6727a2056e49e5!2sParroquia%20del%20Sr.%20San%20Jose!5e0!3m2!1ses!2smx!4v1775708792438!5m2!1ses!2smx"
-        loading="lazy"
-      >
-      </iframe>
-
-      <a href="https://maps.app.goo.gl/ThWMdMwbRMK4SwN48" target="_blank">
-        <button>Cómo llegar</button>
-      </a>
-    </section>
-
-    <!-- RECEPCIÓN -->
-    <section class="section fade-in">
-      <h2>🎉 Recepción</h2>
-      <p class="lugar">Quinta Valle Real</p>
-      <p>🕒 7:00 PM</p>
-
-      <iframe
-        class="mapa"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.5836062999842!2d-102.15551342528721!3d20.969230589821596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84295e99cb64ee9f%3A0x1b56b327d371e728!2sQuinta%20Valle%20Real!5e0!3m2!1ses!2smx!4v1775803917024!5m2!1ses!2smx"
-        loading="lazy"
-      >
-      </iframe>
-
-      <a href="https://maps.app.goo.gl/7sjQhrhFhwtf3jsz7" target="_blank">
-        <button>Cómo llegar</button>
-      </a>
-    </section>
-
-    <!-- GALERÍA -->
-    <section class="section fade-in">
-      <h2>Momentos Especiales</h2>
-      <div class="galeria">
-        <img src="assets/img1.jpg" />
-        <img src="assets/img2.jpg" />
-        <img src="assets/img3.jpg" />
+        <!-- Contador -->
+        <div id="countdown"></div>
       </div>
     </section>
 
-    <!-- ALOJAMIENTO -->
-    <section class="section fade-in">
-      <h2>🏨 Alojamiento</h2>
-      <p>Para nuestros invitados que vienen de fuera, recomendamos:</p>
-
-      <div class="alojamiento">
-        <!-- OPCIÓN PRINCIPAL -->
-        <div class="hotel destacado">
-          <h3>⭐ Hotel Casa Grande</h3>
-          <p>Opción recomendada por los anfitriones</p>
-
-          <a href="https://maps.app.goo.gl/jvo6W6jkK987hJPXA" target="_blank">
-            <button>Ver ubicación</button>
-          </a>
-        </div>
-
-        <!-- OPCIÓN SECUNDARIA -->
-        <div class="hotel">
-          <h3>Hotel Mansión Real</h3>
-          <p>Alternativa cómoda y accesible</p>
-
-          <a href="https://maps.app.goo.gl/5CvsP1TY3SkAWeMs9" target="_blank">
-            <button>Ver ubicación</button>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRESS CODE -->
-    <section class="section fade-in">
-      <h2>Dress Code</h2>
-      <p>Estilo Vaquero 🤠</p>
-    </section>
-
-    <!-- RSVP -->
-    <section class="section fade-in">
-      <h2>Confirma tu asistencia</h2>
-      <button onclick="confirmar()">Confirmar</button>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>Con amor, Hatsumi & Salvador 🤎</p>
-    </footer>
-
+    <!-- Script -->
     <script src="script.js"></script>
   </body>
 </html>
