@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Bodoni Moda", serif;
   background-color: #f5e6cc; /* beige base */
 }
 
@@ -97,15 +97,58 @@ body {
 }
 
 /* =========================
-   COUNTDOWN
+   COUNTDOWN SECCIÓN
 ========================= */
 
-#countdown {
-  margin-top: 20px;
-  font-size: 18px;
+.countdown-section {
+  background-color: #8b5e3c; /* café */
+  color: #f5e6cc; /* beige */
+
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Título */
+.countdown-title {
+  font-family: "Bodoni Moda", serif;
+  letter-spacing: 6px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* Contenedor en línea */
+.countdown-container {
+  display: flex;
+  justify-content: space-between; /* distribuye todo el ancho */
+  align-items: center;
+
+  width: 100%;
+  max-width: 500px; /* opcional para que no se vea gigante en desktop */
+
+  margin: 0 auto;
+  padding: 0 0px; /* margen mínimo lateral */
+}
+
+/* Cada bloque */
+.tiempo {
+  flex: 1; /* todos ocupan el mismo espacio */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Números grandes */
+.tiempo span {
+  font-family: "Bodoni Moda", serif;
+  font-size: 32px;
+}
+
+/* Texto pequeño */
+.tiempo p {
+  margin: 5px 0 0;
+  font-size: 12px;
   letter-spacing: 2px;
-  font-weight: bold;
-  color: #f5e6cc; /* beige claro */
 }
 
 .icono {
@@ -113,9 +156,36 @@ body {
 }
 
 .icono img {
-  width: 200px;
+  width: 120px;
   height: auto;
   opacity: 0.9;
+}
+
+/* =========================
+   FRASE (tarjeta blanca)
+========================= */
+
+.frase-box {
+  background-color: #f2eee7; /* blanco */
+
+  max-width: 500px;
+  margin: 120px auto 0;
+  padding: 40px 25px;
+
+  border-radius: 2px;
+
+  /* Sombra suave */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Texto */
+.frase-box p {
+  font-family: "Bodoni Moda", serif; /* más elegante */
+  text-transform: uppercase;
+  color: #2b2b2b; /* negro suave */
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 2px;
 }
 
 /* =========================
