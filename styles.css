@@ -162,7 +162,6 @@ body {
   flex-direction: column;
   align-items: center;
 
-  /* ✨ hover suave */
   transition: transform 0.3s ease;
 }
 
@@ -190,7 +189,6 @@ body {
   height: auto;
   opacity: 0.9;
 
-  /* ✨ micro animación */
   animation: floatIcon 3s ease-in-out infinite;
 }
 
@@ -211,11 +209,9 @@ body {
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 
-  /* ✨ aparición elegante */
   animation: fadeUp 1.5s ease-out;
 }
 
-/* overlay */
 .frase-box::before {
   content: "";
   position: absolute;
@@ -226,7 +222,6 @@ body {
   z-index: 0;
 }
 
-/* texto */
 .frase-box p {
   position: relative;
   z-index: 1;
@@ -238,6 +233,85 @@ body {
   font-size: 13px;
   line-height: 1.8;
   letter-spacing: 2px;
+}
+
+/* =========================
+   SECCIÓN NOSOTROS (FIX SOLO AQUÍ)
+========================= */
+
+.nombres-section {
+  background-color: #f5e6cc;
+  padding: 100px 20px; /* puedes dejar tu valor si quieres */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 CORRECCIÓN REAL */
+.nombres-container {
+  display: flex;
+  flex-direction: column; /* CLAVE */
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  gap: 20px;
+
+  width: 100%;
+  overflow: hidden;
+}
+
+.seccion-titulo {
+  font-family: "Bodoni Moda", serif;
+
+  font-size: 36px; /* más grande */
+  letter-spacing: -5px; /* más juntas */
+  text-transform: uppercase;
+
+  color: #847e33;
+
+  margin: 0;
+
+  opacity: 0;
+  animation: fadeUp 1.2s ease-out forwards;
+
+  /* 👇 CLAVE: efecto vertical elegante */
+  transform: scaleY(1.25);
+  transform-origin: center;
+  gap: 18px;
+}
+
+.nombres-container img {
+  width: 300px;
+  max-width: 85%;
+  height: auto;
+
+  opacity: 0;
+  transform: translateX(120px);
+
+  animation: slideInRight 1.6s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.foto-oval {
+  width: 240px;
+  height: 300px;
+
+  object-fit: cover;
+
+  /* 👇 más aplastado (óvalo horizontal elegante) */
+  border-radius: 55% / 45%;
+
+  margin-top: 25px;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  animation: fadeUp 1.4s ease-out forwards;
+  animation-delay: 0.5s;
+
+  box-shadow: none;
 }
 
 /* =========================
@@ -296,6 +370,17 @@ body {
   }
 }
 
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
@@ -307,5 +392,17 @@ body {
 
   #countdown {
     font-size: 26px;
+  }
+
+  .countdown-container {
+    gap: 10px;
+  }
+
+  .tiempo span {
+    font-size: 24px;
+  }
+
+  .tiempo p {
+    font-size: 10px;
   }
 }

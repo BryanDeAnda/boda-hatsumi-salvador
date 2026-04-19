@@ -10,11 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const minutosEl = document.getElementById("minutos");
   const segundosEl = document.getElementById("segundos");
 
-  setInterval(() => {
+  const interval = setInterval(() => {
     const ahora = new Date().getTime();
     const diff = fechaBoda - ahora;
 
-    if (diff <= 0) return;
+    if (diff <= 0) {
+      clearInterval(interval);
+      diasEl.innerText = "00";
+      horasEl.innerText = "00";
+      minutosEl.innerText = "00";
+      segundosEl.innerText = "00";
+      return;
+    }
 
     const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
