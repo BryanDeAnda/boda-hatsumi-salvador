@@ -16,84 +16,86 @@
   </head>
 
   <body>
-    <!-- =========================
+    <div class="app">
+      <!-- =========================
          HERO (Pantalla completa)
          ========================= -->
-    <section class="hero">
-      <!-- Capa oscura para mejorar legibilidad -->
-      <div class="overlay"></div>
+      <section class="hero reveal">
+        <!-- Capa oscura para mejorar legibilidad -->
+        <div class="overlay"></div>
 
-      <!-- Contenido principal -->
-      <div class="contenido">
-        <div class="icono">
-          <img src="assets/corazon_nombres2.svg" alt="decoración" />
+        <!-- Contenido principal -->
+        <div class="contenido">
+          <div class="icono">
+            <img src="assets/corazon_nombres2.svg" alt="decoración" />
+          </div>
+          <!-- Fecha -->
+          <p class="fecha">14 | NOVIEMBRE | 2026</p>
+
+          <!-- Nombres -->
+          <h1 class="nombres">
+            <span class="nombre">SALVADOR</span>
+            <span class="and">&</span>
+            <span class="nombre">HATSUMI</span>
+          </h1>
+
+          <!-- Texto pequeño -->
+          <p class="subtitulo">NUESTRA BODA</p>
         </div>
-        <!-- Fecha -->
-        <p class="fecha">14 | NOVIEMBRE | 2026</p>
+      </section>
 
-        <!-- Nombres -->
-        <h1 class="nombres">
-          <span class="nombre">SALVADOR</span>
-          <span class="and">&</span>
-          <span class="nombre">HATSUMI</span>
-        </h1>
-
-        <!-- Texto pequeño -->
-        <p class="subtitulo">NUESTRA BODA</p>
-      </div>
-    </section>
-
-    <!-- =========================
+      <!-- =========================
      COUNTDOWN SECCIÓN
 ========================= -->
-    <section class="countdown-section">
-      <!-- Título -->
-      <p class="countdown-title">SOLO FALTAN</p>
+      <section class="countdown-section reveal">
+        <!-- Título -->
+        <p class="countdown-title">SOLO FALTAN</p>
 
-      <!-- Contenedor del tiempo -->
-      <div class="countdown-container">
-        <div class="tiempo">
-          <span id="dias">00</span>
-          <p>DÍAS</p>
+        <!-- Contenedor del tiempo -->
+        <div class="countdown-container">
+          <div class="tiempo">
+            <span id="dias">00</span>
+            <p>DÍAS</p>
+          </div>
+
+          <div class="tiempo">
+            <span id="horas">00</span>
+            <p>HORAS</p>
+          </div>
+
+          <div class="tiempo">
+            <span id="minutos">00</span>
+            <p>MIN</p>
+          </div>
+
+          <div class="tiempo">
+            <span id="segundos">00</span>
+            <p>SEG</p>
+          </div>
         </div>
 
-        <div class="tiempo">
-          <span id="horas">00</span>
-          <p>HORAS</p>
+        <!-- Frase -->
+        <div class="frase-box">
+          <p>
+            El amor nos encontró, nos unió y hoy nos celebramos, te invitamos a
+            ser parte de este día inolvidable, con la bendición de Dios y el
+            cariño de nuestras familias.
+          </p>
         </div>
+      </section>
 
-        <div class="tiempo">
-          <span id="minutos">00</span>
-          <p>MIN</p>
+      <section class="nombres-section reveal">
+        <div class="nombres-container">
+          <p class="seccion-titulo">NOSOTROS</p>
+          <img src="assets/nombre-cactus.svg" alt="Salvador y Hatsumi" />
+          <img
+            class="foto-oval"
+            src="assets/novios.jpeg"
+            alt="Salvador y Hatsumi"
+          />
         </div>
-
-        <div class="tiempo">
-          <span id="segundos">00</span>
-          <p>SEG</p>
-        </div>
-      </div>
-
-      <!-- Frase -->
-      <div class="frase-box">
-        <p>
-          El amor nos encontró, nos unió y hoy nos celebramos, te invitamos a
-          ser parte de este día inolvidable, con la bendición de Dios y el
-          cariño de nuestras familias.
-        </p>
-      </div>
-    </section>
-
-    <section class="nombres-section">
-      <div class="nombres-container">
-        <p class="seccion-titulo">NOSOTROS</p>
-        <img src="assets/nombre-cactus.svg" alt="Salvador y Hatsumi" />
-        <img
-          class="foto-oval"
-          src="assets/novios.jpeg"
-          alt="Salvador y Hatsumi"
-        />
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- Script -->
     <script src="script.js"></script>

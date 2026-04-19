@@ -2,10 +2,21 @@
    ESTILOS GENERALES
 ========================= */
 
+.app {
+  max-width: 420px; /* 📱 ancho tipo celular */
+  margin: 0 auto; /* centra en pantalla */
+
+  background-color: #f5e6cc;
+
+  min-height: 100vh;
+
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+}
+
 body {
   margin: 0;
   font-family: "Bodoni Moda", serif;
-  background-color: #f5e6cc; /* beige base */
+  background-color: #e9ddc8; /* beige base */
 
   /* ✨ animación global suave */
   animation: fadePage 1.2s ease-in-out;
@@ -312,6 +323,17 @@ body {
   animation-delay: 0.5s;
 
   box-shadow: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
