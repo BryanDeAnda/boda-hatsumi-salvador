@@ -6,6 +6,9 @@ body {
   margin: 0;
   font-family: "Bodoni Moda", serif;
   background-color: #f5e6cc; /* beige base */
+
+  /* ✨ animación global suave */
+  animation: fadePage 1.2s ease-in-out;
 }
 
 /* =========================
@@ -19,12 +22,13 @@ body {
 
   display: flex;
   justify-content: center;
-
-  /* 👇 CAMBIO CLAVE */
   align-items: flex-start;
 
   text-align: center;
   color: white;
+
+  /* ✨ entrada suave */
+  animation: heroZoom 1.5s ease-out;
 }
 
 /* Capa oscura encima de la imagen */
@@ -42,18 +46,15 @@ body {
   position: relative;
   z-index: 2;
 
-  /* 👇 controla qué tan arriba/abajo está */
   margin-top: 50px;
-
   padding: 20px;
+
+  /* ✨ subida suave */
+  animation: fadeUp 1.2s ease-out;
 }
 
 /* =========================
    TEXTOS
-========================= */
-
-/* =========================
-   NOMBRES (alineación perfecta)
 ========================= */
 
 .nombres {
@@ -65,35 +66,37 @@ body {
   align-items: center;
   letter-spacing: 3px;
 
-  gap: 5px; /* espacio entre líneas */
+  gap: 5px;
+
+  /* ✨ aparición elegante */
+  animation: fadeUp 1.4s ease-out;
 }
 
-/* Cada nombre */
 .nombre {
   line-height: 1.2;
 }
 
-/* El & */
 .and {
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
-  line-height: 1;
   opacity: 0.8;
 }
 
-/* Fecha */
 .fecha {
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 4px;
   font-size: 14px;
+
+  animation: fadeUp 1.6s ease-out;
 }
 
-/* Subtítulo */
 .subtitulo {
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 6px;
   font-size: 12px;
   margin-top: 10px;
+
+  animation: fadeUp 1.8s ease-out;
 }
 
 /* =========================
@@ -101,50 +104,77 @@ body {
 ========================= */
 
 .countdown-section {
-  background-color: #8b5e3c; /* café */
-  color: #f5e6cc; /* beige */
+  position: relative;
 
+  background: url("assets/fondo_Cafe.png") center/cover no-repeat;
+
+  color: #f5e6cc;
   padding: 60px 20px;
   text-align: center;
+
+  /* ✨ entrada suave */
+  animation: fadeSection 1.5s ease-out;
 }
 
-/* Título */
+/* Overlay */
+.countdown-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* contenido encima */
+.countdown-section * {
+  position: relative;
+  z-index: 1;
+}
+
+/* título */
 .countdown-title {
   font-family: "Bodoni Moda", serif;
   letter-spacing: 6px;
   font-size: 14px;
   margin-bottom: 30px;
+
+  animation: fadeUp 1.2s ease-out;
 }
 
-/* Contenedor en línea */
+/* contenedor */
 .countdown-container {
   display: flex;
-  justify-content: space-between; /* distribuye todo el ancho */
+  justify-content: space-between;
   align-items: center;
 
   width: 100%;
-  max-width: 500px; /* opcional para que no se vea gigante en desktop */
-
+  max-width: 500px;
   margin: 0 auto;
-  padding: 0 0px; /* margen mínimo lateral */
+  padding: 0;
+
+  animation: fadeUp 1.4s ease-out;
 }
 
-/* Cada bloque */
 .tiempo {
-  flex: 1; /* todos ocupan el mismo espacio */
+  flex: 1;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  /* ✨ hover suave */
+  transition: transform 0.3s ease;
 }
 
-/* Números grandes */
+.tiempo:hover {
+  transform: translateY(-3px);
+}
+
 .tiempo span {
   font-family: "Bodoni Moda", serif;
   font-size: 32px;
 }
 
-/* Texto pequeño */
 .tiempo p {
   margin: 5px 0 0;
   font-size: 12px;
@@ -159,37 +189,115 @@ body {
   width: 120px;
   height: auto;
   opacity: 0.9;
+
+  /* ✨ micro animación */
+  animation: floatIcon 3s ease-in-out infinite;
 }
 
 /* =========================
-   FRASE (tarjeta blanca)
+   FRASE (CON IMAGEN)
 ========================= */
 
 .frase-box {
-  background-color: #f2eee7; /* blanco */
-
   max-width: 500px;
   margin: 120px auto 0;
   padding: 40px 25px;
 
   border-radius: 2px;
 
-  /* Sombra suave */
+  background: url("assets/fondo-cactus.png") center/cover no-repeat;
+
+  position: relative;
+
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  /* ✨ aparición elegante */
+  animation: fadeUp 1.5s ease-out;
 }
 
-/* Texto */
+/* overlay */
+.frase-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(242, 238, 231, 0.521);
+
+  z-index: 0;
+}
+
+/* texto */
 .frase-box p {
-  font-family: "Bodoni Moda", serif; /* más elegante */
+  position: relative;
+  z-index: 1;
+
+  font-family: "Bodoni Moda", serif;
   text-transform: uppercase;
-  color: #2b2b2b; /* negro suave */
+  color: #2b2b2b;
+
   font-size: 13px;
   line-height: 1.8;
   letter-spacing: 2px;
 }
 
 /* =========================
-   RESPONSIVE (pantallas grandes)
+   ANIMACIONES
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSection {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
 ========================= */
 
 @media (min-width: 768px) {
