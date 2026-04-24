@@ -3,23 +3,17 @@
 ========================= */
 
 .app {
-  max-width: 420px; /* 📱 ancho tipo celular */
-  margin: 0 auto; /* centra en pantalla */
-
+  max-width: 420px;
+  margin: 0 auto;
   background-color: #f5e6cc;
-
   min-height: 100vh;
-
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 }
 
 body {
   margin: 0;
   font-family: "Bodoni Moda", serif;
-  background-color: #e9ddc8; /* beige base */
-
-  /* ✨ animación global suave */
-  animation: fadePage 1.2s ease-in-out;
+  background-color: #e9ddc8;
 }
 
 /* =========================
@@ -28,21 +22,15 @@ body {
 
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background: url("assets/novios.jpeg") center/cover no-repeat;
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
   text-align: center;
   color: white;
-
-  /* ✨ entrada suave */
-  animation: heroZoom 1.5s ease-out;
 }
 
-/* Capa oscura encima de la imagen */
 .overlay {
   position: absolute;
   width: 100%;
@@ -52,16 +40,11 @@ body {
   left: 0;
 }
 
-/* Contenido encima del overlay */
 .contenido {
   position: relative;
   z-index: 2;
-
   margin-top: 50px;
   padding: 20px;
-
-  /* ✨ subida suave */
-  animation: fadeUp 1.2s ease-out;
 }
 
 /* =========================
@@ -71,16 +54,11 @@ body {
 .nombres {
   font-family: "Bodoni Moda", serif;
   font-size: 42px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   letter-spacing: 3px;
-
   gap: 5px;
-
-  /* ✨ aparición elegante */
-  animation: fadeUp 1.4s ease-out;
 }
 
 .nombre {
@@ -97,8 +75,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 4px;
   font-size: 14px;
-
-  animation: fadeUp 1.6s ease-out;
 }
 
 .subtitulo {
@@ -106,8 +82,60 @@ body {
   letter-spacing: 6px;
   font-size: 12px;
   margin-top: 10px;
+}
 
-  animation: fadeUp 1.8s ease-out;
+/* =========================
+   ANIMACIONES HERO (al cargar)
+========================= */
+
+.hero-animate {
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+.hero-animate .icono {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.hero-animate .fecha {
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+.hero-animate .nombres {
+  animation: fadeUp 1.4s ease-out forwards;
+}
+
+.hero-animate .subtitulo {
+  animation: fadeUp 1.6s ease-out forwards;
+}
+
+/* =========================
+   ANIMACIONES SCROLL
+========================= */
+
+.anim-ready {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.anim-ready.delay-1 {
+  transition-delay: 0.15s;
+}
+.anim-ready.delay-2 {
+  transition-delay: 0.3s;
+}
+.anim-ready.delay-3 {
+  transition-delay: 0.45s;
+}
+.anim-ready.delay-4 {
+  transition-delay: 0.6s;
+}
+
+.anim-ready.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
@@ -116,54 +144,39 @@ body {
 
 .countdown-section {
   position: relative;
-
   background: url("assets/fondo_Cafe.png") center/cover no-repeat;
-
   color: #f5e6cc;
   padding: 60px 20px;
   text-align: center;
-
-  /* ✨ entrada suave */
-  animation: fadeSection 1.5s ease-out;
 }
 
-/* Overlay */
 .countdown-section::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* contenido encima */
 .countdown-section * {
   position: relative;
   z-index: 1;
 }
 
-/* título */
 .countdown-title {
   font-family: "Bodoni Moda", serif;
   letter-spacing: 6px;
   font-size: 14px;
   margin-bottom: 30px;
-
-  animation: fadeUp 1.2s ease-out;
 }
 
-/* contenedor */
 .countdown-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
   padding: 0;
-
-  animation: fadeUp 1.4s ease-out;
 }
 
 .tiempo {
@@ -172,7 +185,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   transition: transform 0.3s ease;
 }
 
@@ -199,145 +211,186 @@ body {
   width: 120px;
   height: auto;
   opacity: 0.9;
-
   animation: floatIcon 3s ease-in-out infinite;
 }
 
 /* =========================
-   FRASE (CON IMAGEN)
+   FRASE
 ========================= */
 
 .frase-box {
   max-width: 500px;
   margin: 120px auto 0;
   padding: 40px 25px;
-
   border-radius: 2px;
-
   background: url("assets/fondo-cactus.png") center/cover no-repeat;
-
   position: relative;
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
-  animation: fadeUp 1.5s ease-out;
 }
 
 .frase-box::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background: rgba(242, 238, 231, 0.521);
-
   z-index: 0;
 }
 
 .frase-box p {
   position: relative;
   z-index: 1;
-
   font-family: "Bodoni Moda", serif;
   text-transform: uppercase;
   color: #2b2b2b;
-
   font-size: 13px;
   line-height: 1.8;
   letter-spacing: 2px;
 }
 
 /* =========================
-   SECCIÓN NOSOTROS (FIX SOLO AQUÍ)
+   SECCIÓN NOSOTROS
 ========================= */
 
 .nombres-section {
   background-color: #f5e6cc;
-  padding: 100px 20px; /* puedes dejar tu valor si quieres */
-
+  padding: 100px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 🔥 CORRECCIÓN REAL */
 .nombres-container {
   display: flex;
-  flex-direction: column; /* CLAVE */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
   gap: 20px;
-
   width: 100%;
   overflow: hidden;
 }
 
 .seccion-titulo {
   font-family: "Bodoni Moda", serif;
-
-  font-size: 36px; /* más grande */
-  letter-spacing: -5px; /* más juntas */
+  font-size: 36px;
+  letter-spacing: -2px;
   text-transform: uppercase;
-
   color: #847e33;
-
   margin: 0;
-
-  opacity: 0;
-  animation: fadeUp 1.2s ease-out forwards;
-
-  /* 👇 CLAVE: efecto vertical elegante */
   transform: scaleY(1.25);
   transform-origin: center;
-  gap: 18px;
 }
 
 .nombres-container img {
   width: 300px;
   max-width: 85%;
   height: auto;
-
-  opacity: 0;
-  transform: translateX(120px);
-
-  animation: slideInRight 1.6s ease-out forwards;
-  animation-delay: 0.3s;
 }
 
 .foto-oval {
   width: 240px;
   height: 300px;
-
   object-fit: cover;
-
-  /* 👇 más aplastado (óvalo horizontal elegante) */
   border-radius: 55% / 45%;
-
   margin-top: 25px;
-
-  opacity: 0;
-  transform: translateY(30px);
-
-  animation: fadeUp 1.4s ease-out forwards;
-  animation-delay: 0.5s;
-
   box-shadow: none;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
+/* =========================
+   SECCIÓN PADRES
+========================= */
+
+.padres-section {
+  background-color: #f5e6cc;
+  padding: 80px 30px 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+.padres-titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.padres-con {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 7px; /* igual que .countdown-title y .subtitulo */
+  color: #7a6a50;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.padres-y {
+  font-family: "Bodoni Moda", serif;
+  font-size: 36px; /* igual que .seccion-titulo */
+  letter-spacing: -2px; /* mismo estilo condensado */
+  color: #847e33; /* mismo dorado de .seccion-titulo */
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.padres-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.padre-nombre {
+  font-family: "Bodoni Moda", serif;
+  font-size: 16px;
+  color: #3a2e1e;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.padres-label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 6px; /* igual que .subtitulo */
+  color: #847e33; /* mismo dorado */
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+
+.padres-divisor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.padres-divisor span {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: #c4a97a;
+  opacity: 0.6;
+}
+
+.padres-corazon {
+  width: 180px;
+  height: auto;
+  opacity: 0.75;
+  align-self: center;
+  margin-top: -90px;
+  margin-bottom: -5px;
+}
+
+.cactus-padres {
+  width: 300px;
+  height: auto;
+  opacity: 0.85;
+  transform-origin: center;
 }
 
 /* =========================
-   ANIMACIONES
+   KEYFRAMES
 ========================= */
 
 @keyframes fadeUp {

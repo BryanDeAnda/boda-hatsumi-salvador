@@ -1,5 +1,5 @@
 /* =========================
-   COUNTDOWN SECCIÓN DETALLADO
+   COUNTDOWN
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const horasEl = document.getElementById("horas");
   const minutosEl = document.getElementById("minutos");
   const segundosEl = document.getElementById("segundos");
+
+  const format = (num) => String(num).padStart(2, "0");
 
   const interval = setInterval(() => {
     const ahora = new Date().getTime();
@@ -23,31 +25,36 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((diff % (1000 * 60)) / 1000);
-
-    diasEl.innerText = dias;
-    horasEl.innerText = horas;
-    minutosEl.innerText = minutos;
-    segundosEl.innerText = segundos;
+    diasEl.innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+    horasEl.innerText = format(
+      Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+    );
+    minutosEl.innerText = format(
+      Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+    );
+    segundosEl.innerText = format(Math.floor((diff % (1000 * 60)) / 1000));
   }, 1000);
+
+  /* =========================
+     ANIMACIONES AL HACER SCROLL
+  ========================= */
+
+  const animElements = document.querySelectorAll(".anim-ready");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // solo se anima una vez
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -40px 0px",
+    },
+  );
+
+  animElements.forEach((el) => observer.observe(el));
 });
-
-const elements = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  },
-  {
-    threshold: 0.2,
-  },
-);
-
-elements.forEach((el) => observer.observe(el));

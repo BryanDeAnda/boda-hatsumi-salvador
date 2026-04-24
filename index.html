@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nuestra Boda</title>
 
-    <!-- Enlace a estilos -->
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Fuentes elegantes -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Josefin+Sans:wght@300;400&display=swap"
       rel="stylesheet"
@@ -17,65 +15,48 @@
 
   <body>
     <div class="app">
-      <!-- =========================
-         HERO (Pantalla completa)
-         ========================= -->
-      <section class="hero reveal">
-        <!-- Capa oscura para mejorar legibilidad -->
+      <!-- HERO -->
+      <section class="hero">
         <div class="overlay"></div>
 
-        <!-- Contenido principal -->
-        <div class="contenido">
+        <div class="contenido hero-animate">
           <div class="icono">
             <img src="assets/corazon_nombres2.svg" alt="decoración" />
           </div>
-          <!-- Fecha -->
           <p class="fecha">14 | NOVIEMBRE | 2026</p>
-
-          <!-- Nombres -->
           <h1 class="nombres">
             <span class="nombre">SALVADOR</span>
             <span class="and">&</span>
             <span class="nombre">HATSUMI</span>
           </h1>
-
-          <!-- Texto pequeño -->
           <p class="subtitulo">NUESTRA BODA</p>
         </div>
       </section>
 
-      <!-- =========================
-     COUNTDOWN SECCIÓN
-========================= -->
-      <section class="countdown-section reveal">
-        <!-- Título -->
-        <p class="countdown-title">SOLO FALTAN</p>
+      <!-- COUNTDOWN -->
+      <section class="countdown-section">
+        <p class="countdown-title anim-ready">SOLO FALTAN</p>
 
-        <!-- Contenedor del tiempo -->
-        <div class="countdown-container">
+        <div class="countdown-container anim-ready delay-1">
           <div class="tiempo">
             <span id="dias">00</span>
             <p>DÍAS</p>
           </div>
-
           <div class="tiempo">
             <span id="horas">00</span>
             <p>HORAS</p>
           </div>
-
           <div class="tiempo">
             <span id="minutos">00</span>
             <p>MIN</p>
           </div>
-
           <div class="tiempo">
             <span id="segundos">00</span>
             <p>SEG</p>
           </div>
         </div>
 
-        <!-- Frase -->
-        <div class="frase-box">
+        <div class="frase-box anim-ready delay-2">
           <p>
             El amor nos encontró, nos unió y hoy nos celebramos, te invitamos a
             ser parte de este día inolvidable, con la bendición de Dios y el
@@ -84,20 +65,58 @@
         </div>
       </section>
 
-      <section class="nombres-section reveal">
+      <!-- NOSOTROS -->
+      <section class="nombres-section">
         <div class="nombres-container">
-          <p class="seccion-titulo">NOSOTROS</p>
-          <img src="assets/nombre-cactus.svg" alt="Salvador y Hatsumi" />
+          <p class="seccion-titulo anim-ready">NOSOTROS</p>
           <img
-            class="foto-oval"
+            class="anim-ready delay-1"
+            src="assets/nombre-cactus.svg"
+            alt="Salvador y Hatsumi"
+          />
+          <img
+            class="foto-oval anim-ready delay-2"
             src="assets/novios.jpeg"
             alt="Salvador y Hatsumi"
           />
         </div>
       </section>
+
+      <!-- PADRES -->
+      <section class="padres-section">
+        <img
+          class="padres-corazon anim-ready"
+          src="assets/corazon_picos.svg"
+          alt="corazón decorativo"
+        />
+        <div class="padres-titulo anim-ready">
+          <p class="padres-con">CON LA BENDICIÓN DE DIOS</p>
+          <p class="padres-y">Y NUESTROS PADRES</p>
+        </div>
+
+        <div class="padres-grupo anim-ready delay-1">
+          <p class="padre-nombre">Paty Reyes Martínez</p>
+          <p class="padre-nombre">J. Guadalupe De Anda Vázquez</p>
+          <p class="padres-label">PADRES DE LA NOVIA</p>
+        </div>
+
+        <div class="padres-divisor anim-ready delay-2">
+          <span></span>
+        </div>
+
+        <div class="padres-grupo anim-ready delay-3">
+          <p class="padre-nombre">Patricia Reynoso</p>
+          <p class="padre-nombre">Salvador Covarrubias</p>
+          <p class="padres-label">PADRES DEL NOVIO</p>
+        </div>
+        <img
+          class="cactus-padres anim-ready delay-4"
+          src="assets/cactus_padres.svg"
+          alt="decoración cactus"
+        />
+      </section>
     </div>
 
-    <!-- Script -->
     <script src="script.js"></script>
   </body>
 </html>
