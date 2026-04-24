@@ -390,6 +390,92 @@ body {
 }
 
 /* =========================
+   SECCIÓN VESTIMENTA
+========================= */
+
+.vestimenta-section {
+  background-color: #f5e6cc;
+  padding: 10px 20px 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.vestimenta-titulo {
+  font-family: "Bodoni Moda", serif;
+  font-size: 28px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #847e33;
+  margin: 0;
+}
+
+.vestimenta-img {
+  width: 180px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.vestimenta-estilo {
+  font-family: "Bodoni Moda", serif;
+  font-size: 22px;
+  letter-spacing: 5px;
+  color: #3a2e1e;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.vestimenta-sugerencia {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #7a6a50;
+  margin: -10px 0 0;
+  font-style: italic;
+}
+
+.vestimenta-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vestimenta-label {
+  font-family: "Bodoni Moda", serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #3a2e1e;
+  margin: 0 0 6px;
+}
+
+.vestimenta-texto {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #5a4a35;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.vestimenta-divisor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.vestimenta-divisor span {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: #c4a97a;
+  opacity: 0.6;
+}
+
+/* =========================
    KEYFRAMES
 ========================= */
 
