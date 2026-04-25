@@ -319,7 +319,7 @@ body {
 .padres-con {
   font-family: "Josefin Sans", sans-serif;
   font-size: 11px;
-  letter-spacing: 7px; /* igual que .countdown-title y .subtitulo */
+  letter-spacing: 7px;
   color: #7a6a50;
   text-transform: uppercase;
   margin: 0;
@@ -327,9 +327,9 @@ body {
 
 .padres-y {
   font-family: "Bodoni Moda", serif;
-  font-size: 36px; /* igual que .seccion-titulo */
-  letter-spacing: -2px; /* mismo estilo condensado */
-  color: #847e33; /* mismo dorado de .seccion-titulo */
+  font-size: 36px;
+  letter-spacing: -2px;
+  color: #847e33;
   text-transform: uppercase;
   margin: 0;
   line-height: 1.2;
@@ -353,8 +353,8 @@ body {
 .padres-label {
   font-family: "Josefin Sans", sans-serif;
   font-size: 11px;
-  letter-spacing: 6px; /* igual que .subtitulo */
-  color: #847e33; /* mismo dorado */
+  letter-spacing: 6px;
+  color: #847e33;
   text-transform: uppercase;
   margin-top: 12px;
 }
@@ -473,6 +473,170 @@ body {
   height: 1px;
   background-color: #c4a97a;
   opacity: 0.6;
+}
+
+/* =========================
+   DIVISOR CACTUS ORGANO
+========================= */
+
+.cactus-divisor-wrapper {
+  background-color: #f5e6cc;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.cactus-organo {
+  width: 50%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   SECCIÓN ITINERARIO
+========================= */
+
+.itinerario-section {
+  background-color: #f5e6cc;
+  padding: 20px 30px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.itinerario-titulo {
+  font-family: "Bodoni Moda", serif;
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: #847e33;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.itinerario-linea {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.itinerario-linea::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  bottom: 13.5%;
+  width: 1px;
+  background-color: #c4a97a;
+  opacity: 0.6;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.itinerario-item {
+  position: relative;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1;
+}
+
+.itinerario-item.centrado {
+  align-self: center;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+
+.itinerario-item.izquierda {
+  align-self: flex-start;
+  text-align: center;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itinerario-fila {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.itinerario-fila.izquierda {
+  justify-content: flex-start;
+}
+
+.itinerario-fila.izquierda .itinerario-conector {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background-color: #c4a97a;
+  opacity: 0.6;
+  transform: translateY(-50%);
+}
+
+.itinerario-fila.derecha {
+  justify-content: flex-end;
+}
+
+.itinerario-fila.derecha .itinerario-conector {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background-color: #c4a97a;
+  opacity: 0.6;
+  transform: translateY(-50%);
+}
+
+.itinerario-item.derecha {
+  width: 45%;
+  text-align: center;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itinerario-icono {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.itinerario-label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #3a2e1e;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.itinerario-hora {
+  font-family: "Bodoni Moda", serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #847e33;
+  margin: 0;
+}
+
+.itinerario-svg {
+  width: 100px;
+  height: auto;
+  opacity: 0.85;
+  display: block;
+  margin: 0 auto;
 }
 
 /* =========================
