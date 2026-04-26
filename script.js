@@ -58,3 +58,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animElements.forEach((el) => observer.observe(el));
 });
+
+/* =========================
+   RSVP - Web3Forms
+========================= */
+
+const form = document.getElementById("rsvp-form");
+const exito = document.getElementById("rsvp-exito");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: data,
+  });
+
+  const json = await res.json();
+
+  if (json.success) {
+    form.style.display = "none";
+    exito.style.display = "block";
+  }
+});

@@ -671,6 +671,227 @@ body {
 }
 
 /* =========================
+   SECCIÓN LUGARES
+========================= */
+
+.lugares-section {
+  background-color: #f5e6cc;
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.lugares-titulo {
+  font-family: "Bodoni Moda", serif;
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: #847e33;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.lugares-subtitulo {
+  font-family: "Bodoni Moda", serif;
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #847e33;
+  text-transform: uppercase;
+  margin: 10px 0 0;
+}
+
+.lugares-subtitulo-sub {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #7a6a50;
+  font-style: italic;
+  margin: -16px 0 0;
+}
+
+.lugar-card {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 20px;
+  border: 1px solid rgba(196, 169, 122, 0.4);
+  border-radius: 2px;
+}
+
+.lugar-icono {
+  font-size: 32px;
+}
+
+.lugar-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.lugar-nombre {
+  font-family: "Bodoni Moda", serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #3a2e1e;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.lugar-tipo {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #847e33;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.lugar-btn {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #f5e6cc;
+  background-color: #847e33;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 1px;
+  transition: background-color 0.3s ease;
+}
+
+.lugar-btn:hover {
+  background-color: #6b6828;
+}
+
+.lugares-divisor {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  justify-content: center;
+}
+
+.lugares-divisor span {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: #c4a97a;
+  opacity: 0.6;
+}
+
+/* =========================
+   SECCIÓN RSVP
+========================= */
+
+.rsvp-section {
+  background-color: #7a8c6e;
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rsvp-titulo {
+  font-family: "Bodoni Moda", serif;
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: #f0e6c8;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.rsvp-subtitulo {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: #e8dcc8;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.rsvp-form {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rsvp-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rsvp-label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #e8dcc8;
+  text-transform: uppercase;
+}
+
+.rsvp-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(240, 230, 200, 0.5);
+  padding: 10px 0;
+  font-family: "Bodoni Moda", serif;
+  font-size: 15px;
+  color: #f5e6cc;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.rsvp-input::placeholder {
+  color: rgba(245, 230, 204, 0.4);
+}
+
+.rsvp-input:focus {
+  border-bottom-color: #f0e6c8;
+}
+
+.rsvp-btn {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #7a8c6e;
+  background-color: #f0e6c8;
+  text-transform: uppercase;
+  border: none;
+  padding: 14px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.rsvp-btn:hover {
+  background-color: #f5e6cc;
+}
+
+.rsvp-exito {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.rsvp-exito-texto {
+  font-family: "Bodoni Moda", serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #f0e6c8;
+  line-height: 1.8;
+}
+
+/* =========================
    KEYFRAMES
 ========================= */
 

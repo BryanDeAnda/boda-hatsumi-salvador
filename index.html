@@ -220,6 +220,125 @@
           </div>
         </div>
       </section>
+
+      <!-- LUGARES -->
+      <section class="lugares-section">
+        <p class="lugares-titulo anim-ready">LUGARES</p>
+
+        <div class="lugar-card anim-ready delay-1">
+          <div class="lugar-icono">⛪</div>
+          <div class="lugar-info">
+            <p class="lugar-nombre">PARROQUIA DEL SR. SAN JOSÉ</p>
+            <p class="lugar-tipo">CEREMONIA RELIGIOSA</p>
+          </div>
+          <a
+            class="lugar-btn"
+            href="https://maps.app.goo.gl/kk8a59xsx6eKN97d9"
+            target="_blank"
+            >VER EN MAPA</a
+          >
+        </div>
+
+        <div class="lugares-divisor anim-ready"><span></span></div>
+
+        <div class="lugar-card anim-ready delay-2">
+          <div class="lugar-icono">🌿</div>
+          <div class="lugar-info">
+            <p class="lugar-nombre">QUINTA VALLE REAL</p>
+            <p class="lugar-tipo">LUGAR DEL EVENTO</p>
+          </div>
+          <a
+            class="lugar-btn"
+            href="https://maps.app.goo.gl/j9ectzX6Ldq8h4PZ8"
+            target="_blank"
+            >VER EN MAPA</a
+          >
+        </div>
+
+        <div class="lugares-divisor anim-ready"><span></span></div>
+
+        <p class="lugares-subtitulo anim-ready">HOSPEDAJE</p>
+        <p class="lugares-subtitulo-sub anim-ready">para invitados de fuera</p>
+
+        <div class="lugar-card anim-ready delay-3">
+          <div class="lugar-icono">🏨</div>
+          <div class="lugar-info">
+            <p class="lugar-nombre">HOTEL CASA GRANDE</p>
+            <p class="lugar-tipo">OPCIÓN PRINCIPAL</p>
+          </div>
+          <a
+            class="lugar-btn"
+            href="https://maps.app.goo.gl/6xvLooecCJx1zX9ZA"
+            target="_blank"
+            >VER EN MAPA</a
+          >
+        </div>
+
+        <div class="lugar-card anim-ready delay-4">
+          <div class="lugar-icono">🏨</div>
+          <div class="lugar-info">
+            <p class="lugar-nombre">HOTEL MANSIÓN REAL</p>
+            <p class="lugar-tipo">OPCIÓN ALTERNATIVA</p>
+          </div>
+          <a
+            class="lugar-btn"
+            href="https://maps.app.goo.gl/EhCe1RbMNMWshB7e8"
+            target="_blank"
+            >VER EN MAPA</a
+          >
+        </div>
+      </section>
+
+      <!-- CONFIRMACIÓN -->
+      <section class="rsvp-section">
+        <p class="rsvp-titulo anim-ready">CONFIRMACIÓN</p>
+        <p class="rsvp-subtitulo anim-ready">DE ASISTENCIA</p>
+
+        <form class="rsvp-form anim-ready delay-1" id="rsvp-form">
+          <input
+            type="hidden"
+            name="access_key"
+            value="611f54a6-0b5b-43df-b8df-737bc9ca8a0d"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="Nueva confirmación de asistencia"
+          />
+
+          <div class="rsvp-campo">
+            <label class="rsvp-label">NOMBRE COMPLETO</label>
+            <input
+              class="rsvp-input"
+              type="text"
+              name="nombre"
+              placeholder="Tu nombre"
+              required
+            />
+          </div>
+
+          <div class="rsvp-campo">
+            <label class="rsvp-label">NÚMERO DE PERSONAS</label>
+            <input
+              class="rsvp-input"
+              type="number"
+              name="personas"
+              min="1"
+              max="10"
+              placeholder="1"
+              required
+            />
+          </div>
+
+          <button class="rsvp-btn" type="submit">CONFIRMAR ASISTENCIA</button>
+        </form>
+
+        <div class="rsvp-exito" id="rsvp-exito">
+          <p class="rsvp-exito-texto">
+            ¡Gracias! Tu asistencia ha sido confirmada 🤍
+          </p>
+        </div>
+      </section>
     </div>
 
     <script src="script.js"></script>
