@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target); // solo se anima una vez
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -57,45 +57,45 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   animElements.forEach((el) => observer.observe(el));
-});
 
-/* =========================
-   RSVP - Web3Forms
-========================= */
+  /* =========================
+     RSVP - Web3Forms
+  ========================= */
 
-const params = new URLSearchParams(window.location.search);
-const invitados = params.get("invitados");
-const nombreParam = params.get("nombre");
+  const params = new URLSearchParams(window.location.search);
+  const invitados = params.get("invitados");
+  const nombreParam = params.get("nombre");
 
-if (invitados) {
-  document.getElementById("rsvp-numero").textContent = invitados;
-  document.getElementById("max-invitados").value = invitados;
-  const input = document.querySelector("input[name='personas']");
-  input.max = invitados;
-}
-
-if (nombreParam) {
-  const nombre = decodeURIComponent(nombreParam);
-  document.getElementById("rsvp-nombre-display").textContent = nombre;
-}
-
-const form = document.getElementById("rsvp-form");
-const exito = document.getElementById("rsvp-exito");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const data = new FormData(form);
-
-  const res = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    body: data,
-  });
-
-  const json = await res.json();
-
-  if (json.success) {
-    form.style.display = "none";
-    exito.style.display = "block";
+  if (invitados) {
+    document.getElementById("rsvp-numero").textContent = invitados;
+    document.getElementById("max-invitados").value = invitados;
+    const input = document.querySelector("input[name='personas']");
+    input.max = invitados;
   }
-});
+
+  if (nombreParam) {
+    const nombre = decodeURIComponent(nombreParam);
+    document.getElementById("rsvp-nombre-display").textContent = nombre;
+  }
+
+  const form = document.getElementById("rsvp-form");
+  const exito = document.getElementById("rsvp-exito");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: data,
+    });
+
+    const json = await res.json();
+
+    if (json.success) {
+      form.style.display = "none";
+      exito.style.display = "block";
+    }
+  });
+}); // cierre del DOMContentLoaded
