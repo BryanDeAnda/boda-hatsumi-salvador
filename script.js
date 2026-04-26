@@ -63,6 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
    RSVP - Web3Forms
 ========================= */
 
+const params = new URLSearchParams(window.location.search);
+const invitados = params.get("invitados");
+const nombreParam = params.get("nombre");
+
+if (invitados) {
+  document.getElementById("rsvp-numero").textContent = invitados;
+  document.getElementById("max-invitados").value = invitados;
+  const input = document.querySelector("input[name='personas']");
+  input.max = invitados;
+}
+
+if (nombreParam) {
+  const nombre = decodeURIComponent(nombreParam);
+  document.getElementById("rsvp-nombre-display").textContent = nombre;
+}
+
 const form = document.getElementById("rsvp-form");
 const exito = document.getElementById("rsvp-exito");
 

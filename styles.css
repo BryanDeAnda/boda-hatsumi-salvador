@@ -891,6 +891,41 @@ body {
   line-height: 1.8;
 }
 
+.rsvp-mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.rsvp-mensaje-texto {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #e8dcc8;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.rsvp-mensaje-numero {
+  font-family: "Bodoni Moda", serif;
+  font-size: 52px;
+  color: #f0e6c8;
+  margin: 4px 0;
+  line-height: 1;
+}
+
+.rsvp-mensaje-nombre {
+  font-family: "Bodoni Moda", serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #f0e6c8;
+  font-style: italic;
+  margin: 6px 0 0;
+}
+
 /* =========================
    KEYFRAMES
 ========================= */

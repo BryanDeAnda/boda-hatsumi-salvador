@@ -294,16 +294,25 @@
         <p class="rsvp-titulo anim-ready">CONFIRMACIÓN</p>
         <p class="rsvp-subtitulo anim-ready">DE ASISTENCIA</p>
 
-        <form class="rsvp-form anim-ready delay-1" id="rsvp-form">
-          <input
-            type="hidden"
-            name="access_key"
-            value="611f54a6-0b5b-43df-b8df-737bc9ca8a0d"
-          />
+        <div class="rsvp-mensaje anim-ready delay-1" id="rsvp-mensaje">
+          <p class="rsvp-mensaje-texto">Esta invitación ha sido enviada para</p>
+          <p class="rsvp-mensaje-numero" id="rsvp-numero">—</p>
+          <p class="rsvp-mensaje-texto">personas</p>
+          <p class="rsvp-mensaje-nombre" id="rsvp-nombre-display"></p>
+        </div>
+
+        <form class="rsvp-form anim-ready delay-2" id="rsvp-form">
+          <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI" />
           <input
             type="hidden"
             name="subject"
             value="Nueva confirmación de asistencia"
+          />
+          <input
+            type="hidden"
+            name="max_invitados"
+            id="max-invitados"
+            value=""
           />
 
           <div class="rsvp-campo">
