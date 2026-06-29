@@ -108,8 +108,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalSlides = dots.length;
   let current = 0;
   let autoplayTimer;
-  let startX = 0;
-  let isDragging = false;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchMoved = false;
 
   const goTo = (index) => {
     current = (index + totalSlides) % totalSlides;
@@ -119,8 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const next = () => goTo(current + 1);
+  const prev = () => goTo(current - 1);
 
   const startAutoplay = () => {
+    stopAutoplay();
     autoplayTimer = setInterval(next, 4000);
   };
 
@@ -135,14 +138,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Swipe táctil
-  let startY = 0;
-
+  // Touch
   track.addEventListener(
     "touchstart",
     (e) => {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchMoved = false;
       stopAutoplay();
     },
     { passive: true },
@@ -151,9 +153,11 @@ document.addEventListener("DOMContentLoaded", () => {
   track.addEventListener(
     "touchmove",
     (e) => {
-      const diffX = Math.abs(e.touches[0].clientX - startX);
-      const diffY = Math.abs(e.touches[0].clientY - startY);
-      if (diffX > diffY) {
+      const diffX = Math.abs(e.touches[0].clientX - touchStartX);
+      const diffY = Math.abs(e.touches[0].clientY - touchStartY);
+
+      if (diffX > 10 && diffX > diffY) {
+        touchMoved = true;
         e.preventDefault();
       }
     },
@@ -163,32 +167,18 @@ document.addEventListener("DOMContentLoaded", () => {
   track.addEventListener(
     "touchend",
     (e) => {
-      const diff = startX - e.changedTouches[0].clientX;
-      const diffY = Math.abs(e.changedTouches[0].clientY - startY);
-      if (Math.abs(diff) > 30 && diffY < 50) {
-        diff > 0 ? next() : goTo(current - 1);
+      const diffX = e.changedTouches[0].clientX - touchStartX;
+      const diffY = Math.abs(e.changedTouches[0].clientY - touchStartY);
+
+      if (touchMoved && Math.abs(diffX) > 30 && diffY < 80) {
+        diffX < 0 ? next() : prev();
       }
+
+      touchMoved = false;
       startAutoplay();
     },
     { passive: true },
   );
-
-  // Swipe mouse (desktop)
-  track.addEventListener("mousedown", (e) => {
-    startX = e.clientX;
-    isDragging = true;
-    stopAutoplay();
-  });
-
-  track.addEventListener("mouseup", (e) => {
-    if (!isDragging) return;
-    const diff = startX - e.clientX;
-    if (Math.abs(diff) > 40) {
-      diff > 0 ? next() : goTo(current - 1);
-    }
-    isDragging = false;
-    startAutoplay();
-  });
 
   startAutoplay();
 
@@ -230,28 +220,5 @@ document.addEventListener("DOMContentLoaded", () => {
       audio.pause();
       audioBtn.textContent = "🔇";
     }
-  });
-
-  /* =========================
-   PANTALLA BIENVENIDA
-========================= */
-
-  const bienvenida = document.getElementById("bienvenida");
-  const bienvenidaBtn = document.getElementById("bienvenida-btn");
-
-  bienvenidaBtn.addEventListener("click", () => {
-    // Arranca la música
-    audio.volume = 0.3;
-    audio.play().catch(() => {});
-    audioActivo = true;
-    audioBtn.textContent = "🎵";
-
-    // Oculta la pantalla con animación
-    bienvenida.classList.add("oculta");
-
-    // La quita del DOM después de la transición
-    setTimeout(() => {
-      bienvenida.remove();
-    }, 800);
   });
 }); // cierre del DOMContentLoaded
