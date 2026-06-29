@@ -77,7 +77,7 @@
           />
           <img
             class="foto-oval anim-ready delay-2"
-            src="assets/novios.jpeg"
+            src="assets/novios-Ovalo.jpg"
             alt="Salvador y Hatsumi"
           />
         </div>
@@ -173,7 +173,7 @@
               alt="ceremonia"
             />
             <p class="itinerario-label">CEREMONIA RELIGIOSA</p>
-            <!--<p class="itinerario-hora">05:00 PM</p>-->
+            <p class="itinerario-hora">01:30 PM</p>
           </div>
 
           <div class="itinerario-fila derecha anim-ready delay-2">
@@ -185,7 +185,7 @@
                 alt="recepción"
               />
               <p class="itinerario-label">RECEPCIÓN</p>
-              <!--<p class="itinerario-hora">06:00 PM</p>-->
+              <p class="itinerario-hora">3:30 PM</p>
             </div>
           </div>
 
@@ -198,7 +198,7 @@
                 alt="comida"
               />
               <p class="itinerario-label">COMIDA</p>
-              <!--<p class="itinerario-hora">07:00 PM</p>-->
+              <p class="itinerario-hora">04:00 PM</p>
             </div>
           </div>
 
@@ -207,7 +207,7 @@
             <div class="itinerario-item derecha">
               <img class="itinerario-svg" src="assets/baile.svg" alt="baile" />
               <p class="itinerario-label">CELEBRACIÓN</p>
-              <!--<p class="itinerario-hora">09:00 PM</p>-->
+              <p class="itinerario-hora">07:00 PM</p>
             </div>
           </div>
 
@@ -217,6 +217,8 @@
               src="assets/final.svg"
               alt="fin del itinerario"
             />
+            <p class="itinerario-label">FIN DE LA VELADA</p>
+            <p class="itinerario-hora">12:00 AM</p>
           </div>
         </div>
       </section>
@@ -289,6 +291,55 @@
         </div>
       </section>
 
+      <!-- GALERÍA -->
+      <section class="galeria-section">
+        <p class="galeria-titulo anim-ready">NUESTROS MOMENTOS</p>
+
+        <div class="carrusel-wrapper anim-ready delay-1">
+          <div class="carrusel-track" id="carrusel-track">
+            <div class="carrusel-slide">
+              <img
+                src="assets/WhatsApp Image 2026-06-15 at 10.17.50 (1).jpeg"
+                alt="foto 1"
+                class="carrusel-img"
+              />
+            </div>
+            <div class="carrusel-slide">
+              <img src="assets/novios.jpeg" alt="foto 2" class="carrusel-img" />
+            </div>
+            <div class="carrusel-slide">
+              <img
+                src="assets/WhatsApp Image 2026-06-15 at 10.17.49 (1).jpeg"
+                alt="foto 3"
+                class="carrusel-img"
+              />
+            </div>
+            <div class="carrusel-slide">
+              <img
+                src="assets/novios-Ovalo.jpeg"
+                alt="foto 4"
+                class="carrusel-img"
+              />
+            </div>
+            <div class="carrusel-slide">
+              <img
+                src="assets/WhatsApp Image 2026-06-15 at 10.17.50.jpeg"
+                alt="foto 5"
+                class="carrusel-img"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="carrusel-dots" id="carrusel-dots">
+          <span class="dot activo" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+          <span class="dot" data-index="3"></span>
+          <span class="dot" data-index="4"></span>
+        </div>
+      </section>
+
       <!-- CONFIRMACIÓN -->
       <section class="rsvp-section">
         <p class="rsvp-titulo anim-ready">CONFIRMACIÓN</p>
@@ -354,6 +405,36 @@
       </section>
     </div>
 
+    <!-- AUDIO -->
+    <audio id="audio-boda" loop preload="auto">
+      <source src="assets/cancion.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- BOTÓN MUTE -->
+    <button class="audio-btn" id="audio-btn" aria-label="Activar música">
+      🎵
+    </button>
     <script src="script.js"></script>
   </body>
+
+  <!-- PANTALLA BIENVENIDA -->
+  <div class="bienvenida" id="bienvenida">
+    <div class="bienvenida-contenido">
+      <img
+        src="assets/corazon_nombres2.svg"
+        alt="decoración"
+        class="bienvenida-icono"
+      />
+      <p class="bienvenida-fecha">14 | NOVIEMBRE | 2026</p>
+      <h1 class="bienvenida-nombres">
+        <span>SALVADOR</span>
+        <span class="bienvenida-and">&</span>
+        <span>HATSUMI</span>
+      </h1>
+      <p class="bienvenida-subtitulo">NUESTRA BODA</p>
+      <button class="bienvenida-btn" id="bienvenida-btn">
+        ABRIR INVITACIÓN
+      </button>
+    </div>
+  </div>
 </html>
