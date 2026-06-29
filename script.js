@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let autoplayTimer;
   let touchStartX = 0;
   let touchStartY = 0;
-  let touchMoved = false;
+  let dragging = false;
 
   const goTo = (index) => {
     current = (index + totalSlides) % totalSlides;
@@ -129,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const stopAutoplay = () => clearInterval(autoplayTimer);
 
-  // Dots
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
       stopAutoplay();
@@ -138,43 +137,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Touch
-  track.addEventListener(
+  // Touch events directamente en el wrapper
+  const wrapper = track.parentElement;
+
+  wrapper.addEventListener(
     "touchstart",
     (e) => {
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
-      touchMoved = false;
+      dragging = false;
       stopAutoplay();
     },
     { passive: true },
   );
 
-  track.addEventListener(
+  wrapper.addEventListener(
     "touchmove",
     (e) => {
-      const diffX = Math.abs(e.touches[0].clientX - touchStartX);
-      const diffY = Math.abs(e.touches[0].clientY - touchStartY);
-
-      if (diffX > 10 && diffX > diffY) {
-        touchMoved = true;
+      const dx = Math.abs(e.touches[0].clientX - touchStartX);
+      const dy = Math.abs(e.touches[0].clientY - touchStartY);
+      if (dx > dy && dx > 8) {
+        dragging = true;
         e.preventDefault();
       }
     },
     { passive: false },
   );
 
-  track.addEventListener(
+  wrapper.addEventListener(
     "touchend",
     (e) => {
-      const diffX = e.changedTouches[0].clientX - touchStartX;
-      const diffY = Math.abs(e.changedTouches[0].clientY - touchStartY);
-
-      if (touchMoved && Math.abs(diffX) > 30 && diffY < 80) {
-        diffX < 0 ? next() : prev();
+      if (!dragging) {
+        startAutoplay();
+        return;
       }
-
-      touchMoved = false;
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 30) {
+        diff > 0 ? next() : prev();
+      }
+      dragging = false;
       startAutoplay();
     },
     { passive: true },
