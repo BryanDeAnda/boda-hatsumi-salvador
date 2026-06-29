@@ -136,18 +136,42 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Swipe táctil
-  track.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-    stopAutoplay();
-  });
+  let startY = 0;
 
-  track.addEventListener("touchend", (e) => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) {
-      diff > 0 ? next() : goTo(current - 1);
-    }
-    startAutoplay();
-  });
+  track.addEventListener(
+    "touchstart",
+    (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      stopAutoplay();
+    },
+    { passive: true },
+  );
+
+  track.addEventListener(
+    "touchmove",
+    (e) => {
+      const diffX = Math.abs(e.touches[0].clientX - startX);
+      const diffY = Math.abs(e.touches[0].clientY - startY);
+      if (diffX > diffY) {
+        e.preventDefault();
+      }
+    },
+    { passive: false },
+  );
+
+  track.addEventListener(
+    "touchend",
+    (e) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      const diffY = Math.abs(e.changedTouches[0].clientY - startY);
+      if (Math.abs(diff) > 30 && diffY < 50) {
+        diff > 0 ? next() : goTo(current - 1);
+      }
+      startAutoplay();
+    },
+    { passive: true },
+  );
 
   // Swipe mouse (desktop)
   track.addEventListener("mousedown", (e) => {
