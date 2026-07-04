@@ -925,6 +925,22 @@ body {
   margin: 6px 0 0;
 }
 
+.rsvp-descripcion {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #e8dcc8;
+  line-height: 2;
+  max-width: 320px;
+  text-align: center;
+  margin: 0 auto 20px;
+}
+
+.rsvp-fecha-limite {
+  color: #f0e6c8;
+  font-weight: 600;
+}
+
 /* =========================
    SECCIÓN GALERÍA
 ========================= */
@@ -1086,24 +1102,6 @@ body {
   opacity: 0.85;
 }
 
-.regalos-opciones {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.regalos-link {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #847e33;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
 .regalos-link:hover {
   opacity: 0.7;
 }
@@ -1123,9 +1121,28 @@ body {
   opacity: 0.5;
 }
 
+.regalos-opciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.regalos-link {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #847e33;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
 .regalos-cuenta-label {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 3px;
   color: #847e33;
   margin: 0;
@@ -1133,7 +1150,7 @@ body {
 
 .regalos-cuenta-nombre {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 2px;
   color: #3a2e1e;
   margin: 0;
@@ -1141,10 +1158,56 @@ body {
 
 .regalos-cuenta-numero {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 3px;
   color: #3a2e1e;
   margin: 0;
+}
+
+.foto-intermedia {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.foto-intermedia-wrapper {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+}
+
+.foto-intermedia-wrapper::before,
+.foto-intermedia-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.foto-intermedia-wrapper::before {
+  top: 0;
+  background: linear-gradient(to bottom, #e8d5b7, transparent);
+}
+
+.foto-intermedia-wrapper::after {
+  bottom: 0;
+  background: linear-gradient(to top, #6b7a4e, transparent);
+}
+
+.foto-intermedia-2::before {
+  background: linear-gradient(to bottom, #6b7a4e, transparent);
+}
+
+.foto-intermedia-2::after {
+  background: linear-gradient(to top, #e8d5b7, transparent);
 }
 
 /* =========================
