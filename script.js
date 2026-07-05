@@ -76,16 +76,35 @@ document.addEventListener("DOMContentLoaded", () => {
   if (nombreParam) {
     const nombre = decodeURIComponent(nombreParam);
     document.getElementById("rsvp-nombre-display").textContent = nombre;
+    document.getElementById("familia-hidden").value = nombre;
   }
 
   const form = document.getElementById("rsvp-form");
   const exito = document.getElementById("rsvp-exito");
 
+  // Revisar si ya confirmó
+  const familiaKey = nombreParam ? `rsvp_confirmado_${decodeURIComponent(nombreParam)}` : "rsvp_confirmado";
+
+  if (localStorage.getItem(familiaKey)) {
+    form.style.display = "none";
+    exito.style.display = "block";
+  }
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const data = new FormData(form);
+    const personasInput = document.querySelector("input[name='personas']");
+    const maxInvitados = parseInt(document.getElementById("max-invitados").value);
+    const personasValue = parseInt(personasInput.value);
 
+    if (maxInvitados && personasValue > maxInvitados) {
+      document.getElementById("rsvp-error").style.display = "block";
+      return;
+    }
+
+    document.getElementById("rsvp-error").style.display = "none";
+
+    const data = new FormData(form);
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: data,
@@ -94,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const json = await res.json();
 
     if (json.success) {
+      localStorage.setItem(familiaKey, "true");
       form.style.display = "none";
       exito.style.display = "block";
     }
@@ -183,43 +203,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startAutoplay();
 
-  /* =========================
+/* =========================
    AUDIO
 ========================= */
 
-  const audio = document.getElementById("audio-boda");
-  const audioBtn = document.getElementById("audio-btn");
-  let audioActivo = false;
+const canciones = ["assets/cancion.mp3", "assets/cancion2.mp3"];
+const cancionAleatoria = canciones[Math.floor(Math.random() * canciones.length)];
 
-  // Primer toque en cualquier parte activa la música
-  const activarAudio = () => {
-    if (!audioActivo) {
-      audio.volume = 0.3;
-      audio
-        .play()
-        .then(() => {
-          audioActivo = true;
-          audioBtn.textContent = "🎵";
-        })
-        .catch(() => {});
-      document.removeEventListener("touchstart", activarAudio);
-      document.removeEventListener("click", activarAudio);
-    }
-  };
+const audio = document.getElementById("audio-boda");
+const audioBtn = document.getElementById("audio-btn");
+audio.src = cancionAleatoria;
+let audioActivo = false;
 
-  document.addEventListener("touchstart", activarAudio);
-  document.addEventListener("click", activarAudio);
-
-  // Botón mute/unmute
-  audioBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (audio.paused) {
-      audio.volume = 0.3;
-      audio.play();
+const activarAudio = () => {
+  if (!audioActivo) {
+    audio.volume = 0.3;
+    audio.play().then(() => {
+      audioActivo = true;
       audioBtn.textContent = "🎵";
-    } else {
-      audio.pause();
-      audioBtn.textContent = "🔇";
-    }
-  });
+    }).catch(() => {});
+    document.removeEventListener("touchstart", activarAudio);
+    document.removeEventListener("click", activarAudio);
+  }
+};
+
+document.addEventListener("touchstart", activarAudio);
+document.addEventListener("click", activarAudio);
+
+audioBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (audio.paused) {
+    audio.volume = 0.3;
+    audio.play();
+    audioBtn.textContent = "🎵";
+  } else {
+    audio.pause();
+    audioBtn.textContent = "🔇";
+  }
+});
 }); // cierre del DOMContentLoaded

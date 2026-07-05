@@ -277,6 +277,19 @@
 
         <div class="lugares-divisor anim-ready"><span></span></div>
 
+        <div class="estacionamiento-card anim-ready">
+          <div class="lugar-icono">🚗</div>
+          <div class="lugar-info">
+            <p class="lugar-nombre">ESTACIONAMIENTO</p>
+            <p class="estacionamiento-texto">
+              LA QUINTA CUENTA CON ESTACIONAMIENTO GRATUITO DENTRO DE LAS
+              INSTALACIONES PARA TODOS LOS INVITADOS.
+            </p>
+          </div>
+        </div>
+
+        <div class="lugares-divisor anim-ready"><span></span></div>
+
         <p class="lugares-subtitulo anim-ready">HOSPEDAJE</p>
         <p class="lugares-subtitulo-sub anim-ready">para invitados de fuera</p>
 
@@ -422,6 +435,12 @@
             id="max-invitados"
             value=""
           />
+          <input 
+            type="hidden" 
+            name="familia" 
+            id="familia-hidden" 
+            value="" 
+          />
 
           <div class="rsvp-campo">
             <label class="rsvp-label">NOMBRE COMPLETO</label>
@@ -446,7 +465,9 @@
               required
             />
           </div>
-
+          <p class="rsvp-error" id="rsvp-error">
+            EL NÚMERO DE PERSONAS NO PUEDE SER MAYOR AL DE TU INVITACIÓN.
+          </p>
           <button class="rsvp-btn" type="submit">CONFIRMAR ASISTENCIA</button>
         </form>
 
@@ -456,6 +477,16 @@
           </p>
         </div>
       </section>
+      <!-- PIE DE PÁGINA -->
+      <footer class="footer">
+        <p class="footer-nombres">SALVADOR & HATSUMI</p>
+        <p class="footer-fecha">14 · NOVIEMBRE · 2026</p>
+        <img
+          class="footer-icono"
+          src="assets/corazon_nombres2.svg"
+          alt="decoración"
+        />
+      </footer>
     </div>
 
     <!-- AUDIO -->
