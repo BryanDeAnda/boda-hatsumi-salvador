@@ -1025,12 +1025,17 @@ body {
 .carrusel-img {
   width: 100%;
   max-width: 320px;
-  height: 420px;
-  object-fit: cover;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
   border-radius: 12px;
   display: block;
   pointer-events: none;
   user-select: none;
+}
+
+.carrusel-slide img {
+  width: 100%;
 }
 
 .carrusel-dots {

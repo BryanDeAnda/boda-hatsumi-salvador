@@ -216,7 +216,7 @@
             <div class="itinerario-item derecha">
               <img class="itinerario-svg" src="assets/baile2.svg" alt="baile" />
               <p class="itinerario-label">CELEBRACIÓN</p>
-              <p class="itinerario-hora">07:00 PM</p>
+              <p class="itinerario-hora">06:00 PM</p>
             </div>
           </div>
 
@@ -320,6 +320,37 @@
             >VER EN MAPA</a
           >
         </div>
+
+        <div class="lugares-divisor anim-ready"><span></span></div>
+
+        <p class="lugares-subtitulo anim-ready">MAQUILLISTAS</p>
+        <p class="lugares-subtitulo-sub anim-ready">recomendadas para el evento</p>
+
+        <div class="lugar-card anim-ready delay-3">
+          <div class="lugar-icono">💄</div>
+          <div class="lugar-info">
+            <p class="lugar-nombre">Felicitas Sainz Padilla</p>
+            <p class="lugar-tipo">MAQUILLAJE PROFESIONAL</p>
+          </div>
+          <a
+            class="lugar-btn"
+            href="https://www.facebook.com/share/1Hz5wUQsm4/?mibextid=wwXIfr"
+            target="_blank"
+          >VER PERFIL</a>
+        </div>
+
+        <div class="lugar-card anim-ready delay-4">
+          <div class="lugar-icono">💄</div>
+          <div class="lugar-info">
+            <p class="lugar-nombre">Judith Make Up</p>
+            <p class="lugar-tipo">MAQUILLAJE PROFESIONAL</p>
+          </div>
+          <a
+            class="lugar-btn"
+            href="https://www.instagram.com/judithmakeup02?igsh=OG80bjJuOWkxZnZz"
+            target="_blank"
+          >VER PERFIL</a>
+        </div>
       </section>
 
       <!-- GALERÍA -->
@@ -359,6 +390,27 @@
                 class="carrusel-img"
               />
             </div>
+            <div class="carrusel-slide">
+              <img
+                src="assets/carrucel6.jpeg"
+                alt="foto 6"
+                class="carrusel-img"
+              />
+            </div>
+            <div class="carrusel-slide">
+              <img
+                src="assets/carrucel7.jpeg"
+                alt="foto 7"
+                class="carrusel-img"
+              />
+            </div>
+            <div class="carrusel-slide">
+              <img
+                src="assets/carrucel8.jpeg"
+                alt="foto 8"
+                class="carrusel-img"
+              />
+            </div>
           </div>
         </div>
 
@@ -368,6 +420,9 @@
           <span class="dot" data-index="2"></span>
           <span class="dot" data-index="3"></span>
           <span class="dot" data-index="4"></span>
+          <span class="dot" data-index="5"></span>
+          <span class="dot" data-index="6"></span>
+          <span class="dot" data-index="7"></span>
         </div>
       </section>
 
@@ -418,7 +473,7 @@
           <p class="rsvp-mensaje-nombre" id="rsvp-nombre-display"></p>
         </div>
 
-        <form class="rsvp-form anim-ready delay-2" id="rsvp-form">
+        <form class="rsvp-form anim-ready delay-2" id="rsvp-form" novalidate>
           <input
             type="hidden"
             name="access_key"
@@ -435,11 +490,11 @@
             id="max-invitados"
             value=""
           />
-          <input 
-            type="hidden" 
-            name="familia" 
-            id="familia-hidden" 
-            value="" 
+          <input
+            type="hidden"
+            name="familia"
+            id="familia-hidden"
+            value=""
           />
 
           <div class="rsvp-campo">
@@ -449,8 +504,8 @@
               type="text"
               name="nombre"
               placeholder="Tu nombre"
-              required
             />
+            <p class="rsvp-error" id="error-nombre">EL NOMBRE ES REQUERIDO.</p>
           </div>
 
           <div class="rsvp-campo">
@@ -462,12 +517,14 @@
               min="1"
               max="10"
               placeholder="1"
-              required
             />
+            <p class="rsvp-error" id="error-personas">EL NÚMERO DE PERSONAS ES REQUERIDO.</p>
           </div>
+
           <p class="rsvp-error" id="rsvp-error">
             EL NÚMERO DE PERSONAS NO PUEDE SER MAYOR AL DE TU INVITACIÓN.
           </p>
+
           <button class="rsvp-btn" type="submit">CONFIRMAR ASISTENCIA</button>
         </form>
 
@@ -477,6 +534,7 @@
           </p>
         </div>
       </section>
+
       <!-- PIE DE PÁGINA -->
       <footer class="footer">
         <p class="footer-nombres">SALVADOR & HATSUMI</p>

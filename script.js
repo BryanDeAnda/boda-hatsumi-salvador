@@ -3,7 +3,7 @@
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const fechaBoda = new Date("November 14, 2026 17:00:00").getTime();
+  const fechaBoda = new Date("November 14, 2026 13:30:00").getTime();
 
   const diasEl = document.getElementById("dias");
   const horasEl = document.getElementById("horas");
@@ -94,8 +94,27 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     const personasInput = document.querySelector("input[name='personas']");
+    const nombreInput = document.querySelector("input[name='nombre']");
     const maxInvitados = parseInt(document.getElementById("max-invitados").value);
     const personasValue = parseInt(personasInput.value);
+
+    let hayError = false;
+
+    if (!nombreInput.value.trim()) {
+      document.getElementById("error-nombre").style.display = "block";
+      hayError = true;
+    } else {
+      document.getElementById("error-nombre").style.display = "none";
+    }
+
+    if (!personasValue || personasValue < 1) {
+      document.getElementById("error-personas").style.display = "block";
+      hayError = true;
+    } else {
+      document.getElementById("error-personas").style.display = "none";
+    }
+
+    if (hayError) return;
 
     if (maxInvitados && personasValue > maxInvitados) {
       document.getElementById("rsvp-error").style.display = "block";
