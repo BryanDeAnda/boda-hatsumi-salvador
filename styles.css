@@ -784,6 +784,20 @@ body {
   opacity: 0.6;
 }
 
+.lugar-codigo {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #847e33;
+  margin: 4px 0 0;
+  text-transform: uppercase;
+}
+
+.lugar-codigo span {
+  font-weight: 600;
+  color: #3a2e1e;
+}
+
 /* =========================
    SECCIÓN RSVP
 ========================= */
